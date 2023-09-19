@@ -1,9 +1,153 @@
+.header {
+   color: #fff;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	&__container {
+		position: sticky;
+		min-height: toRem(88);
+		display:grid;
+		grid-template-columns: 170px 1fr 205px;
+		align-items: center;
+		z-index: 10;
+		@media (max-width:$mobile){
+			 grid-template-columns: auto auto;
+			 justify-content: space-between; 
+			 align-items: center;
+		}
+	}
+
+	&__menu {
+		
+	}
+	&__logo {
+		position: relative;
+		font-family: Clicker Script;
+		font-size: toRem(42);
+		z-index: 50;
+	}
+}
+
+.menu {
+
+	&__body {
+		padding-left: toRem(10);
+		padding-right: toRem(10);
+		@media (max-width:$mobile){
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 100%;
+			background-color: #6f4e37;
+			z-index: 2;
+			overflow: auto;
+			transition: left 0.5s;
+			display: flex;
+			flex-direction: column;
+			&::before{
+				content:'';
+				position: fixed;
+				width: 100%;
+				height: 88px;
+				left: 0;
+				top: 0;
+			}
+			.menu-open & {
+				left: 0;
+				transition: left 0.5s;
+				&::before {
+					content:'';
+					position: fixed;
+					width: 100%;
+					height: 88px;
+					left: 0;
+					top: 0;
+					background-color: #6b4326;
+					z-index: 45;
+				}
+			}
+		}
+		
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		@include adaptiveValue("gap", 60, 0);
+		@media (max-width:$mobile){
+			justify-content: start;
+			 align-items: center;
+			 flex: 1 1 auto;
+			 margin-top: toRem(120);
+			 flex-direction: column; 
+			 font-size: toRem(32);
+			 row-gap: toRem(30);
+			 padding-bottom: toRem(50);
+		}
+	}
+
+	&__item {
+		
+	}
+
+	&__link {
+		font-family: Playfair Display;
+		font-weight: 500;
+		transition: all 0.3s;
+		position: relative;
+		&:before{
+			content:'';
+			position: absolute;
+			width: 0;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: #fff;
+			transition: all 0.3s ease;
+		}
+		&:hover:before {
+			width: 100%;
+			color:#c9c9c9;
+		}
+	}
+}
+
+.autorization {
+	gap: 25px;
+	display: flex;
+	justify-content: end;
+	z-index: 50;
+	@media (max-width:$mobile){
+		justify-content: center;
+		padding-bottom: toRem(100);
+	}
+	&__item {
+	}
+
+	&__link {
+		position: relative;
+		text-decoration: underline;
+         &--reg {
+         text-decoration: none;
+			background-color: #F9C06A;
+			padding: toRem(14) toRem(27);
+			border-radius: 24px;
+			color: #000;
+			&:hover {
+				background-color: #fdba54;
+			}
+			&:before:before {
+				width: 0%;
+			}
+      }
+	}
+}
 //====================================================================================================
 
 //====================================================================================================
-
-//Burger
-/*
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -24,7 +168,7 @@
 			position: absolute;
 			width: 100%;
 			height: toRem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -53,4 +197,3 @@
 		}
 	}
 }
-*/
