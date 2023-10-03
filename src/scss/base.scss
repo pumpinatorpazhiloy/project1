@@ -137,3 +137,21 @@
 		display: none;
 	}
 }
+
+.title {
+	@include adaptiveValue("font-size", 54, 38);
+	font-weight: 700;
+	color: #603809;
+}
+
+.subtitle {
+	@include adaptiveValue("font-size", 20, 16);
+	color: #707070;
+	line-height: 34px;
+}
+
+.text {
+	max-width: toRem(795);
+   margin: 0 auto;
+	text-align: center;
+}

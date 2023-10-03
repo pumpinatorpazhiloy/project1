@@ -7,6 +7,7 @@
 //&display=swap - додати при підключенні через плагін
 @import url("https://fonts.googleapis.com/css?family=Clicker+Script:regular&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Playfair:regular,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:regular,500&display=swap");
 // Підключити, якщо є локальні файли шрифтів
 //@import "fonts/fonts";
 
@@ -148,7 +149,6 @@ body {
 		display: flex;
       height: 100vh;
 		z-index: 2;
-
 	}
 
 	&__content {
@@ -159,6 +159,7 @@ body {
 		align-items: start;
 		justify-content: center;
 		z-index: 1;
+		max-width: toRem(527);
 		@media (max-width:$tablet){
 			display: flex;
 			flex-direction: column;
@@ -177,6 +178,7 @@ body {
 		font-size: toRem(22);
 		font-weight: 500;
 		margin-bottom: toRem(45);
+		font-family: Playfair Display;
 	}
 
 	&__title {
@@ -188,23 +190,13 @@ body {
 	&__subtitle {
 		margin-bottom: toRem(20);
 		font-family: Playfair Display;
-		line-height: 34px;
 		max-width: toRem(600);
+		font-size: toRem(20);
+		line-height: 170%; /* 34/20 */
 	}
 
 	&__button {
-		display: inline-flex;
-      padding: toRem(14) toRem(26);
-      background-color: #F9C06A;
-      border-radius: 24px;
-		span {
-			color: #1E1E1E;
-			font-size: toRem(16);
-			font-weight: 700;
-		}
-		&:hover {
-			background-color: #fdba54;
-		}
+		padding: toRem(14) toRem(26);
 	}
 
 	&__bg {
@@ -225,9 +217,302 @@ body {
 	}
 }
 
-.best {
-	min-height: 100vh;
+.bestcoffe {
+	@include adaptiveValue("padding-top", 150, 20);
+	@include adaptiveValue("padding-bottom", 82, 20);
+	position: relative;
+	&__blast {
+		transform: translate(-60px, 0px);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 272px;
+		width: 36.603221%; /* 500/1366 */
+		z-index: -2;
+		@media (max-width:$tablet){
+			display: none;
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	&__container {
+		display: grid;
+		grid-template-columns: 49.576271% auto; /* 585/1180 */
+		column-gap: 95px;
+		row-gap: 20px;
+		@media (max-width:$tablet){
+			grid-template-columns: auto;
+			align-items:center;
+			justify-content: center;
+		}
+	}
+
+	&__text {
+		max-width: toRem(560);
+   }
+
+
+	&__title {
+		margin-bottom: toRem(30);
+	}
+
+	&__subtitle {
+		margin-bottom: toRem(30);
+	}
+
+	&__button {
+		padding: toRem(14) toRem(23);
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+         max-width: 100%;
+		}
+	}
 }
+
+.enjoy {
+  @include adaptiveValue("padding-top", 82, 20);
+  @include adaptiveValue("padding-bottom", 82, 20);
+	&__container {
+	}
+
+	&__text {
+		max-width: toRem(795);
+      margin: 0 auto;
+		@media (max-width:$tablet){
+			text-align: center;
+		}
+	}
+
+	&__title {
+		margin-bottom: toRem(16);
+	}
+
+	&__subtitle {
+		margin-bottom: toRem(32);
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 270px);
+		column-gap: toRem(20);
+		row-gap: toRem(20);
+		justify-content: center;
+		align-item:center;
+	}
+
+	&__item {
+		width: toRem(280);
+		background-color: #FFF9F1;
+		border: 1px solid rgba(249, 192, 106, 0.42);
+		height: toRem(364);
+	}
+}
+.item-enjoy {
+   text-align: center;
+	&__image {
+      aspect-ratio:  364 / 280;
+		position: relative;
+		margin-bottom: toRem(14);
+		overflow: hidden;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all 0.5s;
+			&:hover {
+				transform: scale(1.05)
+			}
+		}
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 28, 20);
+		margin-bottom: toRem(6);
+		font-weight: 700;
+		a {
+			position: relative;
+			&:before{
+				content:'';
+				position: absolute;
+				width: 0;
+				height: 2px;
+				bottom: 0;
+				left: 0;
+				background-color: #603809;
+				transition: all 0.3s ease;
+			}
+			&:hover:before {
+				width: 100%;
+			}
+		}
+	}
+
+	&__composition {
+		@include adaptiveValue("font-size", 20, 16);
+		color: #1E1E1E;
+		margin-bottom: toRem(6);
+	}
+
+	&__price {
+      @include adaptiveValue("font-size", 22, 18);
+		color: #603809;
+		font-weight: 700;
+		margin-bottom: toRem(16);
+	}
+
+	&__button {
+		transform: translate(0px, 18px);
+		display: inline-block;
+		padding: toRem(13) toRem(26);
+		background-color: #F9C06A;
+		border-radius: toRem(24);
+		box-shadow: 0px 6px 12px 0px rgba(249, 192, 106, 0.22);
+		transition: all 0.3s;
+		font-weight: 700;
+		&:hover {
+			background-color: #fcb347;
+		}
+	}
+}
+
+
+.different {
+	padding-bottom: toRem(82);
+	&__container {
+	}
+
+	&__text {
+		padding-bottom: toRem(32);
+	}
+
+	&__title {
+		margin-bottom: toRem(16);
+	}
+
+	&__subtitle {
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 272px);
+		column-gap: toRem(20);
+		row-gap: toRem(20);
+		justify-content: center;
+		align-item:center;
+	}
+
+	&__item {
+		padding: toRem(36) toRem(40);
+		background-color: #FFF9F1;
+		max-width: toRem(290);
+		height: toRem(280);
+		border: 1px solid rgba(249, 192, 106, 0.42);
+		transition: all 0.3s;
+		&-another {
+			padding: toRem(34) toRem(34);
+		}
+		&:hover {
+			transform: scale(1.05);
+			background-color: #FFEED8;
+		}
+	}
+
+	&__sectext {
+		padding-top: toRem(32);
+		margin-bottom: toRem(24);
+	}
+
+	&__secsub {
+	}
+
+	&__sectitle {
+		margin-bottom: toRem(24);
+	}
+
+	&__button {
+		padding: toRem(14) toRem(41);
+	}
+}
+.item-different {
+   text-align: center;
+	&__icon {
+		margin-bottom: toRem(25);
+	}
+
+	&__title {
+      font-size: toRem(28);
+		font-weight: 700;
+		color: #603809;
+		margin-bottom: toRem(5);
+		line-height: 110%;
+	}
+
+	&__subtitle {
+		font-size: toRem(20);
+		color: #707070;
+		line-height: 110%;
+	}
+}
+
+
+.amazing {
+   background-color: #603809;
+	&__container {
+		display: grid;
+		grid-template-columns: 48.728814% auto; /* 575/1180 */
+		column-gap: toRem(225);
+		@include adaptiveValue("column-gap", 225, 50);
+		padding: toRem(54) toRem(0);
+	}
+
+	&__text {
+	}
+
+	&__title {
+		font-family: Playfair Display;
+		@include adaptiveValue("font-size", 54, 38);
+		color: #FFF;
+		font-weight: 700;
+	}
+
+	&__subtitle {
+		font-size: toRem(20);
+		color: #fff;
+		line-height: 170%; /* 34/20 */
+		font-family: Playfair Display;
+		max-width: toRem(410);
+	}
+
+	&__button {
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+         max-width: 100%;
+		}
+	}
+
+	&__bg {
+	}
+}
+
 
 // Підключення базових стилів, шаблонів (заготівель) та допоміжних класів
 // Для підключення/вимкнення конкретних стилів дивись base.scss
