@@ -138,11 +138,10 @@
 	}
 }
 
-.title {
-	@include adaptiveValue("font-size", 54, 38);
-	font-weight: 700;
-	color: #603809;
-}
+
+
+
+
 
 .subtitle {
 	@include adaptiveValue("font-size", 20, 16);

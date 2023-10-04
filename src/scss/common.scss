@@ -1,1 +1,67 @@
 // Заголовки, загальні БЕМ блоки та інше...
+// .block-header {
+// 	&__title {
+// 		color: #603809;
+// 		@include adaptiveValue("font-size", 54, 38);
+// 		font-weight: 700;
+// 		transform: translate(0, 15%);
+// 		font-family: Playfair Display;
+// 		opacity: 0;
+// 		transition:
+// 			transform 0.5s,
+// 			opacity 0.5s;
+// 		._watcher-view & {
+// 			transform: translate(0, 0);
+// 			opacity: 1;
+// 		}
+//    }
+// }
+
+.block-header {
+
+	&__title {
+		color: #603809;
+		@include adaptiveValue("font-size", 54, 32);
+		font-weight: 700;
+		font-family: Playfair Display;
+		&:not(:last-child) {
+			margin-bottom: toRem(16);
+		}
+		transform: translate(0, 15%);
+		opacity: 0;
+		transition: transform 1s, opacity 1s;
+		._watcher-view & {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+
+	&__title--center {
+	}
+
+	&__title--white {
+		color: #fff;
+		line-height: 130%;
+	}
+
+	&__subtitle {
+		@include adaptiveValue("font-size", 20, 16);
+	   color: #707070;
+	   line-height: 170%;
+		font-family: Playfair Display;
+		transform: translate(0, 15%);
+		opacity: 0;
+		transition: transform 1s, opacity 1s;
+		._watcher-view & {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+
+	&__subtitle--white {
+		color: #fff;
+	}
+}
+.block-header--center {
+	text-align: center;
+}
