@@ -598,8 +598,212 @@ body {
 	}
 }
 
-.aboba {
-	min-height: 100vh;
+.perfection {
+   @include adaptiveValue("padding-top", 82, 20);
+	@include adaptiveValue("padding-bottom", 82, 20);
+	&__container {
+		
+	}
+
+	&__slider {
+	}
+
+	&__wrapper {
+	}
+
+	&__slide {
+		
+	}
+
+
+   &__body {
+      position: relative;
+		
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		width: 106px;
+		height: 106px;
+		@media (max-width:$tablet){
+			display: none;
+		}
+	}
+
+	&__arrow--left {
+		background: url(@img/perfection/arr-r.svg) center no-repeat;
+		left: 0;
+		transform: translate(-50%, 0);
+		border-radius: toRem(16);
+	}
+
+	&__arrow--right {
+		background: url(@img/perfection/arr-l.svg) center no-repeat;
+		right: 0;
+		transform: translate(50%, 0);
+		border-radius: toRem(16);
+	}
+	
+}
+.perfection-block-header {
+	margin-bottom: toRem(45);
+}
+.block-header {
+
+		&__title {
+		}
+
+		&__subtitle {
+		}
+}
+
+
+.slide-perfection {
+	overflow: visible;
+	border: 1px solid rgba(249, 192, 106, 0.42);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: #FFF9F1;
+	padding-top: toRem(130);
+	@include adaptiveValue("padding-left", 100, 50);
+	@include adaptiveValue("padding-right", 100, 50);
+	position: relative;
+	&::before {
+		content: "“";
+		position: absolute;
+		height: 100px;
+		width: 100px;
+		top: 0;
+		padding-top: toRem(43);
+		padding-left: toRem(10);
+		left: 0;
+		font-size: toRem(220);
+		line-height: 51%;
+		font-weight: 700;
+		color: #603809;
+
+	}
+	&__text {
+		margin: 0 auto;
+		max-width: toRem(780);
+		color: #707070;
+		font-family: Playfair Display;
+		font-size: toRem(18);
+		font-weight: 600;
+		line-height: 200%;
+		margin-bottom: toRem(28);
+	}
+
+	&__title {
+		color: #603809;
+		font-size: toRem(32);
+		font-family: Playfair Display;
+		font-weight: 700;
+		margin-bottom: toRem(5);
+	}
+
+	&__work {
+		color: #707070;
+      font-family: Playfair Display;
+      font-size: toRem(20);
+      line-height: 170%; /* 170% */
+	}
+
+	
+
+	&__image {
+		align-self: center;
+		width: toRem(112);
+		height: toRem(112);
+		position: relative;
+		transform: translate(0, 50%);
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			border-radius: toRem(16);
+		}
+	}
+}
+
+
+
+.subscribe {
+   position: relative;
+	background-color: #603809;
+	@include adaptiveValue("padding-top", 82, 20);
+	@include adaptiveValue("padding-bottom", 82, 20);
+	&__container {
+	}
+
+	&__form {
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background-color: #603809;
+		img {
+			opacity: 0.3;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+
+   &__form {
+		padding-top: toRem(26);
+   	position: relative;
+   	z-index: 2;
+		display: flex;
+		justify-content: center;
+   }
+
+	
+	&__input {
+     padding: toRem(16) toRem(26);
+	  border-bottom-left-radius: toRem(4);
+	  border-top-left-radius: toRem(4);
+	  border: 1px solid rgba(249, 192, 106, 0.42);
+	  background: #FFF9F1;
+	  width: 100%;
+	  max-width: toRem(550);
+	  outline: none;
+	}
+
+	&__button {
+		padding: toRem(19) toRem(24);
+		border-bottom-right-radius: toRem(4);
+		border-top-right-radius: toRem(4);
+      background: $btnColor;
+      box-shadow: 0px 6px 12px 0px rgba(249, 192, 106, 0.22);
+		transition: all 0.3s;
+		&:hover {
+			background-color: $btnHoverColor;
+		}
+		span {
+			color: #603809;
+			font-family: Playfair Display;
+         font-size: 22px;
+         font-weight: 700;
+		}
+	}
+}
+.subscribe-block-header {
+	position: relative;
+	z-index: 2;
 }
 
 // Підключення базових стилів, шаблонів (заготівель) та допоміжних класів

@@ -1,3 +1,81 @@
 //====================================================================================================
+.footer {
+background-color: $btnColor;
+	&__container {
+		display: grid;
+		grid-template-columns: 32.20339% auto; /* 380/1180 */
+	}
+
+	&__info {
+		@include adaptiveValue("padding-top", 160, 50);
+		max-width: toRem(380);
+	}
+
+	&__logo {
+		position: relative;
+		font-family: Clicker Script;
+		font-size: toRem(54);
+		z-index: 50;
+		color: #fff;
+		margin-bottom: toRem(20);
+		@media (max-width:$mobile){
+			 font-size: toRem(42); 
+		}
+	}
+
+	&__text {
+		color: #FFF;
+      font-family: Playfair Display;
+      font-size: toRem(14);
+      line-height: 157%;
+		margin-bottom: toRem(20);
+	}
+
+	&__social {
+	}
+
+	&__menu {
+	}
+
+	&__bg {
+	}
+}
+
+.social {
+
+	&__item {
+		display: flex;
+		gap: toRem(30);
+		align-items:center;
+	}
+
+	&__link {
+		a {
+			display: flex
+		}
+
+	}
+}
+
+.menu-footer {
+
+	&__about {
+	}
+
+	&__title {
+	}
+
+	&__list {
+	}
+
+	&__link {
+	}
+
+	&__company {
+	}
+
+	&__contact {
+	}
+}
 
 //====================================================================================================

@@ -38,7 +38,7 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			//autoHeight: true,
+			autoHeight: true,
 			speed: 800,
 
 			//touchRatio: 0,
@@ -74,8 +74,8 @@ function initSliders() {
 
 			// Кнопки "вліво/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.perfection__arrow--left',
+				nextEl: '.perfection__arrow--right',
 			},
 			/*
 			// Брейкпоінти

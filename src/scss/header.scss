@@ -86,13 +86,12 @@
 		justify-content: center;
 		@include adaptiveValue("gap", 60, 0);
 		@media (max-width:$mobile){
-			justify-content: start;
+			 justify-content: start;
 			 align-items: center;
 			 flex: 1 1 auto;
 			 margin-top: toRem(120);
 			 flex-direction: column; 
-			 font-size: toRem(32);
-			 row-gap: toRem(30);
+			 row-gap: toRem(40);
 			 padding-bottom: toRem(50);
 		}
 	}
@@ -108,7 +107,7 @@
 		position: relative;
 		font-size: toRem(14);
 		@media (max-width:$mobile){
-			font-size: toRem(24);
+			font-size: toRem(26);
 		}
 		&:before{
 			content:'';
