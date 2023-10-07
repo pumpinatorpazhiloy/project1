@@ -1,14 +1,28 @@
 //====================================================================================================
 .footer {
-background-color: $btnColor;
+	@include adaptiveValue("padding-top", 162, 50);
+	@include adaptiveValue("padding-bottom", 72, 20);
+   background-color: #442808;
+	position: relative;
 	&__container {
+		column-gap: toRem(66);
 		display: grid;
 		grid-template-columns: 32.20339% auto; /* 380/1180 */
+		z-index: 2;
+		position: relative;
+		@media (max-width:$tablet){
+			grid-template-columns: auto;
+		}
 	}
 
 	&__info {
-		@include adaptiveValue("padding-top", 160, 50);
+		margin: 0 auto;
 		max-width: toRem(380);
+		@media (max-width:$tablet){
+			grid-template-columns: auto;
+			max-width: none;
+			text-align: center;
+		}
 	}
 
 	&__logo {
@@ -38,6 +52,21 @@ background-color: $btnColor;
 	}
 
 	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: 0.2;
+		img {
+			position: absolute;
+		   top: 0;
+		   left: 0;
+		   width: 100%;
+		   height: 100%;
+			object-fit: cover;
+		}
 	}
 }
 
@@ -47,28 +76,76 @@ background-color: $btnColor;
 		display: flex;
 		gap: toRem(30);
 		align-items:center;
+		@media (max-width:$tablet){
+			justify-content: center;
+			margin-bottom: toRem(40);
+		}
 	}
 
 	&__link {
+		transition: all 0.3s;
 		a {
 			display: flex
 		}
-
+      &:hover {
+			transform: scale(1.2);
+		}
 	}
 }
 
 .menu-footer {
 
+	
+}
+
+
+.menu-footer {
+
+   &__spollers {
+		display: grid;
+   	gap: toRem(66);
+   	grid-template-columns: toRem(136) toRem(136) auto; 
+   	@media (max-width:$tablet){
+   		grid-template-columns: auto;
+			gap: toRem(0);
+   	}
+	}
+      
+
+   &__block {
+	   @media (max-width:$tablet){
+			&:not(:last-child) {margin-bottom: toRem(35);}
+		}
+	}
+
 	&__about {
+
 	}
 
 	&__title {
+		color: #FFF;
+      font-family: Playfair Display;
+      font-size: toRem(26);
+      font-weight: 700;
+		@include adaptiveValue("margin-bottom", 55, 10);
+		@media (max-width:$tablet){
+			@media (max-width:$tablet){
+				&:not(:last-child) {margin-bottom: toRem(20);}
+			}
+		}
 	}
 
 	&__list {
 	}
 
 	&__link {
+		color: #FFF;
+      font-family: Playfair Display;
+      font-size: toRem(18);
+      line-height: 233%; /* 233.333% */
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	&__company {

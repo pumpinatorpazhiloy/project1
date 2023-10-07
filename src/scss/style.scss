@@ -222,12 +222,6 @@ body {
 	}
 }
 
-
-.bestcoffe {
-
-	&__block-header {
-	}
-}
 .block-header {
 
 	&__title {
@@ -240,26 +234,19 @@ body {
 	@include adaptiveValue("padding-top", 150, 20);
 	@include adaptiveValue("padding-bottom", 82, 20);
 	position: relative;
-	&__blast {
-		transform: translate(-60px, 0px);
+	&:before {
+		content: '';
+		background: url(@img/blast.png) -75px 0 / 498px 272px no-repeat;
 		position: absolute;
-		bottom: 0;
+		bottom: -10%;
 		left: 0;
+		width: 100%; /* 498/1366 */
 		height: 272px;
-		width: 36.603221%; /* 500/1366 */
-		z-index: -2;
+		z-index: -1;
 		@media (max-width:$tablet){
 			display: none;
 		}
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: auto;
-		}
 	}
-	
 	&__container {
 		display: grid;
 		grid-template-columns: 52% auto; /* 585/1180 */
@@ -302,8 +289,27 @@ body {
 }
 
 .enjoy {
-  @include adaptiveValue("padding-top", 82, 20);
   @include adaptiveValue("padding-bottom", 82, 20);
+  position: relative;
+  &__blast {
+	position: absolute;
+	bottom: -20%;
+	right: -4%;
+	height: 272px;
+	width: 27.306003%; /* 373/1366 */
+	z-index: -2;
+	transform: rotateY(180deg);
+	@media (max-width:$tablet){
+		display: none;
+	}
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+}
 	&__container {
 	}
 
@@ -414,7 +420,22 @@ body {
 
 
 .different {
-	padding-bottom: toRem(82);
+	@include adaptiveValue("padding-bottom", 82, 20);
+	position: relative;
+	&:before {
+		content: '';
+		background: url(@img/blast.png) -70px 0 / 478px 261px no-repeat;
+		position: absolute;
+		top: -15%;
+		right: 0;
+		width: 100%; /* 498/1366 */
+		height: 272px;
+		z-index: 2;
+		transform: rotateY(180deg);
+		@media (max-width:$tablet){
+			display: none;
+		}
+	}
 	&__container {
 	}
 
@@ -507,25 +528,41 @@ body {
 .amazing {
    background-color: #603809;
 	position: relative;
-	// &::after {
-	// 	content: '';
-	// 	background-image: url(@img/get_chance/coffee_bean.png) no-repeat;
+	&::after {
+		content: '';
+		background: url(@img/get_chance/coffee_bean.png) right/contain no-repeat;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		@media (max-width:$tablet){
+			background: url(@img/get_chance/coffee_bean.png) right/cover no-repeat;
+		}
+	}
+
+	// &__img {
+	// 	position: absolute;
+	// 	right: 0;
+	// 	bottom: 0;
+	// 	width: 100%; /* 533/1366 */
+	// 	z-index: 2;
+	// 	height: 100%;
+	// 	img {
 	// 	position: absolute;
 	// 	right: 0;
 	// 	bottom: 0;
 	// 	width: 100%;
 	// 	height: 100%;
+	// 	}
 	// }
-
-	&__img {
-	}
 	
 	&__container {
 		display: grid;
 		grid-template-columns: 48.728814% auto; /* 575/1180 */
 		column-gap: toRem(225);
 		@include adaptiveValue("column-gap", 225, 50);
-		padding: toRem(54) toRem(0);
+		@include adaptiveValue("padding-top", 54, 20);
 		z-index: 2;
 		position: relative;
 		@media (max-width:$tablet){
@@ -543,6 +580,11 @@ body {
 		align-items:start;
 		@media (max-width:$tablet){
          align-items: center;
+			padding-top: toRem(0);
+			backdrop-filter: blur(3px);
+			border: 1px solid rgba($color: #fff, $alpha: 0.3);
+			border-radius: toRem(24);
+			padding: toRem(20);
 		}
 	}
 
@@ -601,9 +643,40 @@ body {
 .perfection {
    @include adaptiveValue("padding-top", 82, 20);
 	@include adaptiveValue("padding-bottom", 82, 20);
+	position: relative;
+	&:before {
+		content: '';
+		background: url(@img/blast.png) 0 0 / 498px 272px no-repeat;
+		position: absolute;
+		top: 15%;
+		right: 0;
+		width: 100%; /* 498/1366 */
+		height: 272px;
+		z-index: 2;
+		transform: rotateY(180deg);
+		@media (max-width:$tablet){
+			display: none;
+		}
+	}
+	&:after {
+		content: '';
+		background: url(@img/blast.png) 0 0 / 414px 226px no-repeat;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%; /* 498/1366 */
+		height: 226px;
+		z-index: 2;
+		transform: rotateX(180deg);
+		@media (max-width:$tablet){
+			display: none;
+		}
+	}
 	&__container {
 		
 	}
+
+
 
 	&__slider {
 	}
@@ -618,7 +691,6 @@ body {
 
    &__body {
       position: relative;
-		
 	}
 
 	&__arrow {
@@ -679,7 +751,7 @@ body {
 		padding-top: toRem(43);
 		padding-left: toRem(10);
 		left: 0;
-		font-size: toRem(220);
+		@include adaptiveValue("font-size", 220, 160);
 		line-height: 51%;
 		font-weight: 700;
 		color: #603809;
@@ -718,7 +790,6 @@ body {
 		width: toRem(112);
 		height: toRem(112);
 		position: relative;
-		transform: translate(0, 50%);
 		img {
 			position: absolute;
 			top: 0;
@@ -738,6 +809,33 @@ body {
 	background-color: #603809;
 	@include adaptiveValue("padding-top", 82, 20);
 	@include adaptiveValue("padding-bottom", 82, 20);
+	&:before {
+		content: '';
+		background: url(@img/subscribe/cup.png) right / 444px 358px no-repeat;
+		position: absolute;
+		bottom: -33%;
+		right: -7%;
+		width: 100%; /* 498/1366 */
+		height: 358px;
+		z-index: 1;
+		@media (max-width:$tablet){
+			display: none;
+		}
+	}
+	&:after {
+		content: '';
+		background: url(@img/subscribe/cup.png) right / 444px 358px no-repeat;
+		position: absolute;
+		bottom: -33%;
+		left: -7%;
+		width: 100%; /* 498/1366 */
+		height: 358px;
+		z-index: 1;
+		transform: rotateY(-180deg);
+		@media (max-width:$tablet){
+			display: none;
+		}
+	}
 	&__container {
 	}
 
@@ -769,6 +867,9 @@ body {
    	z-index: 2;
 		display: flex;
 		justify-content: center;
+		@media (max-width:$mobileSmall){
+			 display: block; 
+		}
    }
 
 	
@@ -790,6 +891,9 @@ body {
       background: $btnColor;
       box-shadow: 0px 6px 12px 0px rgba(249, 192, 106, 0.22);
 		transition: all 0.3s;
+		@media (max-width:$mobileSmall){
+			 width: 100%; 
+		}
 		&:hover {
 			background-color: $btnHoverColor;
 		}
